@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" class="full-height">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0  shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="../style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -22,26 +20,20 @@
         integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
         crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/ba1eae497d.js" crossorigin="anonymous"></script>
-
-
-
-
-    <title>Teddy Bear Online shop </title>
+    <title></title>
 </head>
 
 <body>
-    <!-- main header-->
-
     <header>
         <div class="card">
-            <div class="card-body d-flex align-items-center justify-content-around">
+            <div class="card-body d-flex align-items-center justify-content-between pl-5 pr-5">
                 <img src="https://i.postimg.cc/cJ77z03x/21932251.jpg" alt="logo-image" id="logo-image"
                     style="height: 80px; width: 80px;">
                 <a href="#" style="height: 60px; width: 60px;"><i class="fas fa-shopping-basket"></i></a>
             </div>
         </div>
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-light">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-light pl-5">
             <a class="navbar-brand" href="index.html"><span class="font-weight-bold" id="logo-brand">Teddy Bear</span> </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
                 aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,11 +46,11 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="index.html"><strong>Home</strong><span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="#"><strong>Service</strong> </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="#"><strong>Contact Us</strong> </a>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#"><strong>Contact Us</strong> </a>
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
@@ -75,60 +67,36 @@
     <!-- main content-->
     <main class="container-fluid mt-5 mb-5">
         <section class="container">
-            <div class="row align-items-center justify-content-around text-center">
-                <div class="col-sm-6 mt-3 ">
-                    <div class="position-relative border rounded-lg" style="width: 300px; height: 300px;">
-                        <a href="page1.html"> <img class="h-75 w-100 p-3 rounded-2" src="../images/teddy_1.jpg"
-                                alt=""></a>
-                        <div>
-                            <a class="text-center" href="">Price: $20</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 mt-3">
-                    <div class="position-relative border rounded-lg" style="width: 300px; height: 300px;">
-                        <a href="page2.html"><img class="h-75  w-100 p-3 rounded-lg" src="../images/teddy_2.jpg"
-                                alt=""></a>
-                        <div>
-                            <a class="text-center" href="">Price: $20</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <section class="container">
-            <div class="row align-items-center justify-content-around text-center">
-                <div class="col-sm-6 mt-3">
-                    <div class="position-relative border rounded-lg" style="width: 300px; height: 300px;">
-                        <a href="page3.html"><img class="h-75 w-100 p-3 rounded-2" src="../images/teddy_3.jpg"
-                                alt=""></a>
-                        <div>
-                            <a class="text-center" href="">Price: $20</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 mt-3">
-                    <div class=" position-relative border rounded-lg" style="width: 300px; height: 300px;">
-                        <a href="page4.html"><img class="h-75 w-100 p-3 rounded-2" src="images/teddy_4.jpg" alt=""></a>
-                        <div>
-                            <a class="text-center" href="">Price: $20</a>
-                        </div>
+            <div class=" row align-items-center justify-content-around text-center">
+                <div class="col-sm-6">
+                    <div class="position-relative border rounded-lg">
+                        <img class="img-fluid rounded-lg" src="../images/teddy_3.jpg" alt="" id="image">
+                        
+                            <div><strong>Price:</strong> $20 </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">Select Quantity</label>
+                                <select class="form-control-sm" id="exampleFormControlSelect1">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-outline-dark">Buy</button>
                     </div>
                 </div>
             </div>
         </section>
-
     </main>
     <!-- main content ends-->
 
     <!-- footer content-->
     <footer class="card bg-dark text-light" style="height: 100px;">
-        <div class="row card-body ">
-            <div class="col-sm d-flex align-items-center justify-content-around ">
-                <i class="fab fa-facebook"></i>
-                <i class=" fab fa-instagram"></i>
+        <div class="row card-body">
+            <div class="col-sm d-flex align-items-center justify-content-around">
+                <i class=" fab fa-facebook"></i>
+                <i class="fab fa-instagram"></i>
                 <i class="fab fa-twitter"></i>
                 <i class="fab fa-pinterest-square"></i>
             </div>
@@ -138,6 +106,7 @@
     </footer>
 
     <!-- footer content ends-->
+
 </body>
 
 </html>
