@@ -1,14 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;600&display=swap');
-
 body {
-    
-    font-family: 'Poppins', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .navbar {
     background-color: black;
-    height: 150px;
+}
+
+.navbar .nav-link {
+    font-size: 16px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-transform: uppercase;
 }
 
 .navbar-brand {
@@ -16,13 +19,17 @@ body {
     font-size: 3rem;
 }
 
-.carousel-item {
- height: 600px;
+.navbar-toggler {
+    outline: none !important;
+}
 
+.carousel-item {
+    height: 600px;
 }
 
 .carousel-item img {
-   background-size: cover;
+    background-size: cover;
+    object-fit: cover;
 }
 
 .btn {
@@ -32,14 +39,16 @@ body {
     font-size: 1.5rem;
 }
 
-.btn:hover, .btn:focus {
+.btn:hover,
+.btn:focus {
     background-color: rgb(16, 2, 90);
     color: white;
 }
 
-.carousel-caption h2, p { 
-   color: rgb(1, 2, 15);
-   font-weight: bolder;
+.carousel-caption h2,
+p {
+    color: rgb(1, 2, 15);
+    font-weight: bolder;
 }
 
 .carousel-caption h2 {
@@ -50,7 +59,8 @@ body {
     font-size: 1.5rem;
 }
 
-.carousel-control-prev, .carousel-control-next {
+.carousel-control-prev,
+.carousel-control-next {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -66,4 +76,6 @@ body {
     right: 10%;
 }
 
-
+.embed-responsive .card-img-top {
+    object-fit: cover;
+}
