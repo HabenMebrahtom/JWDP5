@@ -76,6 +76,24 @@ p {
     right: 10%;
 }
 
+.card {
+    height: 400px;
+    width: 300px;
+    position: relative;
+}
+
 .embed-responsive .card-img-top {
     object-fit: cover;
+}
+
+.embed-responsive {
+    height: 80%;
+}
+
+.card-img-top {
+    height: 100%;
+}
+
+main {
+    height: 100%;
 }
