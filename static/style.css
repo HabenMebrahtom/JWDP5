@@ -16,7 +16,7 @@ body {
 
 .navbar-brand {
     font-family: 'Sigmar one', sans-serif;
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 .navbar-toggler {
@@ -30,6 +30,10 @@ body {
 .carousel-item img {
     background-size: cover;
     object-fit: cover;
+}
+
+a {
+    text-decoration: none;
 }
 
 .btn {
@@ -80,6 +84,15 @@ p {
     height: 400px;
     width: 300px;
     position: relative;
+    background-color: rgb(230, 138, 153);
+}
+
+.cart {
+    color: white;
+}
+
+.cart:hover {
+    color: red;
 }
 
 .embed-responsive .card-img-top {
@@ -94,10 +107,6 @@ p {
     height: 100%;
 }
 
-main {
-    height: 100%;
-}
-
-#product {
+footer {
     height: 100%;
 }
