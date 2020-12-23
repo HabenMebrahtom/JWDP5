@@ -1,8 +1,3 @@
-let cart = [];
-let cartKey = "itemNumbers";
-
-
-
 async function getItemData() {
     const params = new URLSearchParams(location.search);
     const id = params.get("id");
@@ -28,7 +23,7 @@ async function getItemData() {
                   </select>
                 </div>
                 <div class="d-flex justify-content-center align-items-center">
-                   <button id="add-cart" onclick="addToCart('${data._id}')" class="btn btn-dark px-4">Add to Cart</button>
+                   <button id="add-cart" onclick="onClickAddItem('${data._id}') " class="btn btn-dark px-4">Add to Cart</button>
                 </div>
             </div>   
         </div>
@@ -44,56 +39,12 @@ function addColor(color) {
     return `<option >${color}</option>`;
 }
 
-function addToCart(id) {
-    cart.push(id);
-    saveCart();
-}
-//on change
-//saveCart(cart, cartKey)
-function saveCart() {
-    let savedCart = JSON.stringify(cart);
-    window.localStorage.setItem(cartKey, savedCart);
-    document.querySelector('.cart span').textContent = cart.length;
-    loadCart();
-}
-
-//on Page Load
-//cart = loadCart(cartKey)
-
-function loadCart() {
-    let loadedCart = window.localStorage.getItem(cart);
-
-    if (loadedCart) {
-        return JSON.parse(loadedCart);
-    } else {
-        return "{}";
-    }
-
+function updateCartCounter() {
+    document.querySelector(".cart span").textContent = checkCartSize();
 }
 
 
-
-/*function onLoadingCartNumbers(id) {
-    let itemNumbers = localStorage.getItem(id);
-
-    if (itemNumbers) {
-        document.querySelector('.cart span').textContent = itemNumbers;
-    }
+function onClickAddItem(id) {
+    addItem(id);
+    updateCartCounter();
 }
-
-
-
-function cartNumbers(id) {
-    let itemNumbers = localStorage.getItem(id);
-    itemNumbers = parseInt(itemNumbers);
-
-    if (itemNumbers) {
-        localStorage.setItem(id, itemNumbers + 1);
-        document.querySelector('.cart span').textContent = itemNumbers + 1;
-    } else {
-        localStorage.setItem(id, 1);
-        document.querySelector('.cart span').textContent = 1;
-    }
-}
-
-onLoadingCartNumbers(id); */

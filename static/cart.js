@@ -1,22 +1,27 @@
-function onLoadingCartNumbers(id) {
-    let itemNumbers = localStorage.getItem(id);
+let cartKey = "itemNumbers";
 
-    if (itemNumbers) {
-        document.querySelector('.cart span').textContent = itemNumbers;
-    }
+
+// add ietms id to the cart in local storage
+
+function addItem(id) {
+    let addedCart = getCart();
+    addedCart.push(id);
+    let savedCart = JSON.stringify(addedCart);
+    window.localStorage.setItem(cartKey, savedCart);
 }
 
+// check the cart size from local storage
+function checkCartSize() {
+    return getCart().length;
+}
 
-
-function cartNumbers(id) {
-    let itemNumbers = localStorage.getItem(id);
-    itemNumbers = parseInt(itemNumbers);
-
-    if (itemNumbers) {
-        localStorage.setItem(id, itemNumbers + 1);
-        document.querySelector('.cart span').textContent = itemNumbers + 1;
+// get the cart 
+function getCart() {
+    let loadedCart = window.localStorage.getItem(cartKey);
+    if (loadedCart) {
+        return JSON.parse(loadedCart);
     } else {
-        localStorage.setItem(id, 1);
-        document.querySelector('.cart span').textContent = 1;
+        return [];
     }
+
 }
