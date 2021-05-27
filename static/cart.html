@@ -44,12 +44,6 @@
                     <li class="nav-item">
                         <a class="nav-link " href="#"><strong>Contact Us</strong> </a>
                     </li>
-                    <li>
-                        <a href="">
-                            <i class="px-5 fas fa-shopping-basket fa-2x"></i>
-                        </a>
-
-                    </li>
                 </ul>
 
             </div>
@@ -61,14 +55,71 @@
     <main>
         <!-- product section-->
 
-        <section id="products" class="products py-5">
+        <section id="carts" class="products py-5">
             <div class="container">
-                <div class="row product-items" id="product-items">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Teddies</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Qty</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Delete</th:scope>
+                        </tr>
+                    </thead>
+                    <tbody id="cart-items">
 
-                </div>
+                    </tbody>
+                </table>
             </div>
         </section>
+        <div>
+            <hr class="fw-bolder fs-1 bg-dark" style="width: 80%">
+            <div class="fw-bolder fs-1 d-flex justify-content-center align-items-center">Total Price: <span id="totalPrice"> </span></div>
+            <hr class="fw-bolder fs-1 bg-dark" style="width: 80%">
+        </div>
         <!--Product section end-->
+
+        <!--Submit order form start -->
+
+        <hr class="fw-bolder fs-1 bg-dark align-items-center" style="width: 60%;">
+        <section id="shipping-form" class="col-8 col-md-6 m-auto ">
+            <div class="d-flex justify-content-center align-items-center">
+                <h2>Submit Form</h2>
+            </div>
+
+            <form class="row g-3">
+                <div class="col-md-4">
+                    <label for="fname" class="form-label">First name</label>
+                    <input type="text" class="form-control" id="fname" value="fname" required>
+                </div>
+                <div class="col-md-4">
+                    <label for="lname" class="form-label">Last name</label>
+                    <input type="text" class="form-control" id="lname" value="lname" required>
+                </div>
+                <div class="col-md-4">
+                    <label for="email" class="form-label">E-mail</label>
+                    <input type="text" class="form-control" id="email" aria-describedby="inputEmail" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="city" class="form-label">City</label>
+                    <input type="text" class="form-control" id="city" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="state" class="form-label">State</label>
+                    <input type="text" class="form-control" id="state" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="zipCode" class="form-label">Zip Code</label>
+                    <input type="text" class="form-control" id="zipCode" required>
+                </div>
+                <div class="col-12 my-4">
+                    <button class="btn btn-primary" type="submit">Submit form</button>
+                </div>
+            </form>
+
+        </section>
+        <!--Submit order form ends-->
     </main>
     <!-- main content ends-->
 
@@ -88,7 +139,7 @@
 
     <!-- footer content ends-->
     <!--JavaScript link starts-->
-    <script src="cart-items.js"></script>
+    <script src="cart.js"></script>
     <!--JavaScript link ends-->
 </body>
 

@@ -15,12 +15,12 @@ const getApi = async() => {
                 product.innerHTML += `
           <div class="card my-3 shadow p-3 mb-5 rounded">
             <div class="embed-responsive embed-responsive-16by9">
-                <a href="#"><img class="card-img-top embed-responsive-item" src="${jsonResponse.imageUrl}" alt=""></a>
+                <img class="card-img-top embed-responsive-item" src="${jsonResponse.imageUrl}" alt="">
             </div>
             <div class="card-body">
                 <div class="card-text d-flex justify-content-around align-items-center text-capitalize">
                     <h5 class="fw-bolder">${jsonResponse.name}</h5>
-                    <span class=""><i class="fas fa-dollar-sign"></i> ${(jsonResponse.price/100).toFixed(2)}</span>
+                    <span class=""><i class="fas fa-dollar-sign"></i> $${(jsonResponse.price/100).toFixed(2)}</span>
                 </div>
                 <div class="d-flex justify-content-center align-items-center my-3">
                   <select id="color"  name="color" class="form-select form-select-sm form-select-lg px-4 py-2" aria-label=".form-select-sm products-color w" > 
@@ -40,7 +40,7 @@ const getApi = async() => {
                   </select>
                 </div>
                 <div class="d-flex justify-content-center align-items-center">
-                   <button  id="add-cart" "class="btn btn-dark px-4">Buy</button>
+                   <button  id="add-cart" "class="btn px-4">Add To Cart</button>
                 </div>
             </div>   
         </div>
@@ -56,9 +56,9 @@ const getApi = async() => {
                 
             const cartObject = () => {
                 
-            cartNumbers.addEventListener('click', () => {
-
-                
+            cartNumbers.addEventListener('click', (option) => {
+              option.preventDefault();
+              location.href = 'index.html';
 
                 const qty = document.getElementById('qty');
                 const select = document.getElementById('color')

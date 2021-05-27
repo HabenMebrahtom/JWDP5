@@ -36,17 +36,9 @@ a {
     text-decoration: none;
 }
 
-.btn {
-    background-color: black;
-    color: #fcfcfc;
-    font-weight: bolder;
-    font-size: 1.5rem;
-}
-
-.btn:hover,
-.btn:focus {
-    background-color: rgb(16, 2, 90);
-    color: white;
+#cart-image {
+    width: 70px;
+    height: 70px;
 }
 
 .carousel-caption h2,
@@ -109,4 +101,13 @@ p {
 
 footer {
     height: 100%;
+}
+
+#removeItem {
+    color: rgb(1, 2, 15);
+    font-weight: 900;
+}
+
+#removeItem:hover {
+    color: #ff0000;
 }
