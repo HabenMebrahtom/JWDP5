@@ -28,11 +28,7 @@
  }
 
  if (cartArr.length > 0) {
-
-
-
      const cartItems = document.getElementById('cart-items');
-
 
      for (let i = 0; i < cartArr.length; i++) {
          const totalTimesQuantity = parseInt(cartArr[i].price) * cartArr[i].quantity;
@@ -42,7 +38,7 @@
          <td>${cartArr[i].name}</td>
          <td>${cartArr[i].quantity}</td>
          <td>$${totalTimesQuantity}</td>
-         <td id="removeItem" value="${Object.keys(localStorage)[i]}"><i class="far fa-trash-alt"></i></td>
+         <td><i class="far fa-trash-alt" id="removeCartItem"></i></td>
         `;
 
          cartItems.appendChild(cartItem);
@@ -55,10 +51,26 @@
 
          calculateTotalPrice();
 
+         let totalPrice = cartTotalPrice.reduce((accumulator, currentvalue) => accumulator + currentvalue);
+         const totalPriceDisplay = document.getElementById('totalPrice');
+         totalPriceDisplay.innerHTML = `$${totalPrice}`;
+
+         const removeItems = () => {
+             const removeCartItem = document.getElementById('removeCartItem');
+             removeCartItem.value = Object.keys(localStorage)[i];
+
+             removeCartItem.onclick = () => {
+
+                 if (removeCartItem.value) {
+                     localStorage.removeItem(removeCartItem.value);
+                     location.reload();
+                 }
+
+             };
+         }
+
+         removeItems();
+
      }
+
  }
-
- let totalPrice = cartTotalPrice.reduce((accumulator, currentvalue) => accumulator + currentvalue);
-
- const totalPriceDisplay = document.getElementById('totalPrice');
- totalPriceDisplay.innerHTML = `$${totalPrice}`;

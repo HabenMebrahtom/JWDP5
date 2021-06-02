@@ -75,7 +75,7 @@
         </section>
         <div>
             <hr class="fw-bolder fs-1 bg-dark" style="width: 80%">
-            <div class="fw-bolder fs-1 d-flex justify-content-center align-items-center">Total Price: <span id="totalPrice"> </span></div>
+            <div class="fw-bolder fs-1 d-flex justify-content-center align-items-center" id="displayTotalPrice">Total Price: <span id="totalPrice"> </span></div>
             <hr class="fw-bolder fs-1 bg-dark" style="width: 80%">
         </div>
         <!--Product section end-->
@@ -91,27 +91,27 @@
             <form class="row g-3">
                 <div class="col-md-4">
                     <label for="fname" class="form-label">First name</label>
-                    <input type="text" class="form-control" id="fname" value="fname" required>
+                    <input type="text" class="form-control" id="fname" value="fname" palaceholder="Enter Your First Name" required>
                 </div>
                 <div class="col-md-4">
                     <label for="lname" class="form-label">Last name</label>
-                    <input type="text" class="form-control" id="lname" value="lname" required>
+                    <input type="text" class="form-control" id="lname" value="lname" placeholder="Enter Your Last Name" required>
                 </div>
                 <div class="col-md-4">
                     <label for="email" class="form-label">E-mail</label>
-                    <input type="text" class="form-control" id="email" aria-describedby="inputEmail" required>
+                    <input type="text" class="form-control" id="email" aria-describedby="inputEmail" pattern=".+@.+\..+" required>
                 </div>
                 <div class="col-md-6">
                     <label for="city" class="form-label">City</label>
-                    <input type="text" class="form-control" id="city" required>
+                    <input type="text" class="form-control" id="city" placeholder="City" required>
                 </div>
                 <div class="col-md-3">
                     <label for="state" class="form-label">State</label>
-                    <input type="text" class="form-control" id="state" required>
+                    <input type="text" class="form-control" id="state" placeholder="State" required>
                 </div>
                 <div class="col-md-3">
                     <label for="zipCode" class="form-label">Zip Code</label>
-                    <input type="text" class="form-control" id="zipCode" required>
+                    <input type="text" class="form-control" id="zipCode" placeholder="Zip Code" required>
                 </div>
                 <div class="col-12 my-4">
                     <button class="btn btn-primary" type="submit">Submit form</button>
@@ -121,6 +121,7 @@
         </section>
         <!--Submit order form ends-->
     </main>
+
     <!-- main content ends-->
 
     <!-- footer content-->

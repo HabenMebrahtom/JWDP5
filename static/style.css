@@ -103,11 +103,16 @@ footer {
     height: 100%;
 }
 
-#removeItem {
+#removeCartItem {
     color: rgb(1, 2, 15);
     font-weight: 900;
 }
 
-#removeItem:hover {
+#removeCartItem:hover {
     color: #ff0000;
+}
+
+#displayTotalPrice {
+    color: rgb(1, 2, 15);
+    font-weight: bold;
 }
