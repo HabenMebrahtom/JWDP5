@@ -38,12 +38,7 @@
                         <a class="nav-link" href="index.html"><strong>Home</strong><span
                                 class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><strong>Service</strong> </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="#"><strong>Contact Us</strong> </a>
-                    </li>
+
                 </ul>
 
             </div>
@@ -88,33 +83,33 @@
                 <h2>Submit Form</h2>
             </div>
 
-            <form class="row g-3">
-                <div class="col-md-4">
+            <form class="row g-3" novalidate>
+                <div class="col-md-4 my-2">
                     <label for="fname" class="form-label">First name</label>
-                    <input type="text" class="form-control" id="fname" value="fname" palaceholder="Enter Your First Name" required>
+                    <input type="text" class="form-control" id="fname" placeholder="Enter Your First Name" required>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 my-2">
                     <label for="lname" class="form-label">Last name</label>
-                    <input type="text" class="form-control" id="lname" value="lname" placeholder="Enter Your Last Name" required>
+                    <input type="text" class="form-control" id="lname" placeholder="Enter Your Last Name" required>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 my-2">
                     <label for="email" class="form-label">E-mail</label>
-                    <input type="text" class="form-control" id="email" aria-describedby="inputEmail" pattern=".+@.+\..+" required>
+                    <input type="email" class="form-control" id="email" aria-describedby="InputEmail" placeholder="exampel@exampel.com" required>
                 </div>
-                <div class="col-md-6">
-                    <label for="city" class="form-label">City</label>
-                    <input type="text" class="form-control" id="city" placeholder="City" required>
+                <div class="col-md-6 my-2">
+                    <label for="city" class="form-label">City Adress</label>
+                    <input type="text" class="form-control" id="city" placeholder="City Adress" required>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3 my-2">
                     <label for="state" class="form-label">State</label>
-                    <input type="text" class="form-control" id="state" placeholder="State" required>
+                    <input type="text" class="form-control" name="state" placeholder="State" id="state">
                 </div>
-                <div class="col-md-3">
-                    <label for="zipCode" class="form-label">Zip Code</label>
-                    <input type="text" class="form-control" id="zipCode" placeholder="Zip Code" required>
+                <div class="col-md-3 my-2">
+                    <label for="zipCode" class="form-label">Post Code</label>
+                    <input type="text" class="form-control" id="zipCode" placeholder="000-000" required>
                 </div>
-                <div class="col-12 my-4">
-                    <button class="btn btn-primary" type="submit">Submit form</button>
+                <div class="col-12 my-4 d-flex align-items-center justify-content-center">
+                    <button class="btn btn-primary" type="submit" id="submitButton">Submit</button>
                 </div>
             </form>
 

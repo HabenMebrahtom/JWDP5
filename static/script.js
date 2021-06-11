@@ -5,7 +5,7 @@ async function getData() {
     data.forEach(teddyData => {
         const product = document.createElement('div')
         product.innerHTML = ` 
-        <div class="col-10 col-sm-6 col-lg-4 mx-auto col-sm-6 col-lg-4 my-3">
+        <div class="col-10 col-md-6 col-lg-4 m-auto">
            <div class="card my-3 mx-3 shadow p-3 mb-5 rounded">
                 <div class="embed-responsive embed-responsive-16by9">
                     <a href="product.html?id=${teddyData._id}"><img class="card-img-top embed-responsive-item" src="${teddyData.imageUrl}" alt=""></a>

@@ -116,3 +116,7 @@ footer {
     color: rgb(1, 2, 15);
     font-weight: bold;
 }
+
+#home {
+    margin-right: 35px;
+}

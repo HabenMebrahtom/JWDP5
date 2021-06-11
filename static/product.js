@@ -12,7 +12,7 @@ const getApi = async() => {
                 const jsonResponse = await response.json();
                 console.log(jsonResponse);
                 const bootstrapClass = document.createElement('div');
-                product.innerHTML += `
+                bootstrapClass.innerHTML += `
                       <div class="card my-3 shadow p-3 mb-5 rounded">
                          <div class="embed-responsive embed-responsive-16by9">
                             <img class="card-img-top embed-responsive-item" src="${jsonResponse.imageUrl}" alt="">
@@ -50,13 +50,13 @@ const getApi = async() => {
  
           
             
-            const cartNumbers = document.getElementById('add-cart');
+            const addCart = document.getElementById('add-cart');
             
             
                 
             const cartObject = () => {
                 
-            cartNumbers.addEventListener('click', (option) => {
+            addCart.addEventListener('click', (option) => {
               option.preventDefault();
               location.href = 'index.html';
 
@@ -77,6 +77,7 @@ const getApi = async() => {
                     const localStKey = `${jsonResponse.name}, ${select.value}`
                     window.localStorage.setItem(localStKey, JSON.stringify(cartObject));  
                 }
+              
             });
         
         }

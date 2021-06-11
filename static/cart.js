@@ -74,3 +74,108 @@
      }
 
  }
+
+ const fnameInput = document.getElementById('fname');
+ const lnameInput = document.getElementById('lname');
+ const emailInput = document.getElementById('email');
+ const cityInput = document.getElementById('city');
+ const stateInput = document.getElementById('state');
+ const zipCodeInput = document.getElementById('zipCode');
+ const submitBtton = document.getElementById('submitButton');
+
+
+
+ function ValidateEmail(mail) {
+     if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(mail)) {
+         return (true)
+     }
+     alert("You have entered an invalid email address!")
+     return (false)
+ }
+
+ const checkValidation = () => {
+
+     if (fnameInput.value != " " &&
+         lnameInput.value != " " &&
+         ValidateEmail(emailInput.value) != false && cityInput.value != " " &&
+         stateInput.value != " " &&
+         zipCodeInput.value != " ") {
+         return true;
+     } else if (fnameInput.value == ' ') {
+         alert('Enter Your First Name');
+         fnameInput.style.border += "thin solid red";
+         return false;
+     } else if (lnameInput.value == ' ') {
+         alert('Enter Your Last Name');
+         lnameInput.style.border += "thin solid red";
+         return false;
+     } else if (emailInput.value != ValidateEmail(mail)) {
+         fnameInput.style.border = "thin solid red";
+         return false;
+     } else if (cityInput.value == ' ') {
+         alert('Enter Your City Adress');
+         cityInput.style.border += "thin solid red";
+         return false;
+     } else if (stateInput.value == ' ') {
+         alert('Enter Your State');
+         fnameInput.style.border += "thin solid red";
+         return false;
+     } else if (zipCodeInput.value == ' ') {
+         alert('Enter Your Post code');
+         zipCodeInput.style.border += "thin solid red";
+         return false;
+     } else {
+         return false;
+     }
+ }
+
+
+ submitButton.onclick = ($event) => {
+     $event.preventDefault();
+
+
+     if (checkValidation()) {
+         const post = async() => {
+             const body = {
+                 contact: {
+                     fname: fnameInput.value,
+                     lname: lnameInput.value,
+                     email: email.value,
+                     adess: cityInput.value,
+                     stateInput: stateInput.value,
+                     zipCode: zipCodeInput.value
+                 },
+
+                 products: productID
+             }
+
+             const rawResponse = await fetch('http://localhost:3000/api/teddies' + '/order', {
+                 method: 'POST',
+                 headers: {
+                     'accept': 'application/json',
+                     'content-type': 'application/json'
+                 },
+                 body: JSON.stringify(body)
+             });
+
+             const content = await rawResponse.json();
+
+
+             const orderTotal = [];
+             for (let i = 0; i < cartArr.length; i++) {
+                 orderTotal.push(content.products[i].price / 100 * cartArr[i].quantity);
+
+             }
+
+             const orderTotalFormated = orderTotal.reduce((accumulator, currentvalue) => accumulator + currentvalue).toFixed(2);
+
+             localStorage.clear();
+
+             window.location.href = 'confirmation.html' + '?totalPrice=' + orderTotalFormatted + '&orderID=' + content.orderId;
+         };
+
+         post();
+     } else {
+         console.error('Form validation is not passed');
+     }
+ }
